@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Target $750 Reward</title>
+<style>
+    * {box-sizing:border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;}
+  body {margin:0; background:#FFF9F0; color:#1A1A1A; padding:16px;}
+  .container {max-width:420px; margin:auto;}
+
+  .header {text-align:center; margin-bottom:18px;}
+  .logo {font-size:28px; font-weight:900; margin:0;}
+  .logo .target {color:#CC0000;}
+  .logo .bullseye {color:#CC0000; font-size:32px; vertical-align:middle; margin-left:2px;}
+  .subtitle {color:#5F6368; font-size:13px; margin-top:4px;}
+
+  .reward-card {
+    background:#CC0000;
+    color:#fff;
+    border-radius:16px;
+    padding:22px 16px;
+    text-align:center;
+    margin-bottom:18px;
+    box-shadow:0 8px 20px rgba(204,0,0,0.25);
+  }
+  .reward-card .tag {font-size:11px; text-transform:uppercase; letter-spacing:1px; opacity:0.8;}
+  .reward-card .amount {font-size:42px; font-weight:900; margin:6px 0;}
+
+  h3 {font-size:15px; font-weight:800; margin:0 0 12px; color:#1A1A1A;}
+
+  .steps {display:grid; gap:10px; margin-bottom:22px;}
+  .step {
+    background:#fff; 
+    border-radius:14px; 
+    padding:14px 14px 14px 50px;
+    position:relative;
+    box-shadow:0 2px 6px rgba(0,0,0,0.04);
+    border:1px solid #FFD9D9;
+  }
+  .step .num {
+    position:absolute;
+    left:14px; top:14px;
+    background:#CC0000; 
+    color:#fff;
+    border-radius:8px;
+    width:24px; height:24px;
+    line-height:24px; text-align:center;
+    font-size:12px; font-weight:900;
+  }
+  .step b {font-size:14px; display:block; margin-bottom:2px;}
+  .step small {color:#5F6368; font-size:12.5px;}
+
+  /* FAQ Accordion */
+  .faq {margin-bottom:22px;}
+  .faq-item {background:#fff; border-radius:12px; margin-bottom:8px; overflow:hidden; border:1px solid #FFD9D9;}
+  .faq-q {
+    padding:14px;
+    display:flex; justify-content:space-between; align-items:center;
+    cursor:pointer; font-weight:700; font-size:13.5px;
+  }
+  .faq-q .icon {
+    background:#CC0000; color:#fff; border-radius:50%;
+    width:20px; height:20px; line-height:20px; text-align:center;
+    font-size:12px; transition:transform 0.2s;
+  }
+  .faq-q.active .icon {transform:rotate(45deg);}
+  .faq-a {
+    padding:0 14px 14px;
+    font-size:12.5px; color:#5F6368; line-height:1.5;
+    display:none;
+  }
+  .faq-a.open {display:block;}
+
+  /* CTA */
+  .cta-btn {
+    display:block;
+    width:100%;
+    background:#CC0000;
+    color:#fff;
+    text-align:center;
+    padding:16px;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:900;
+    text-decoration:none;
+    box-shadow:0 6px 16px rgba(204,0,0,0.35);
+  }
+  .cta-btn:active {transform:translateY(1px);}
+</style>
+</head>
+<body>
+  <div class="container">
+    
+    <div class="header">
+      <h1 class="logo"><span class="target">Target</span><span class="bullseye">◎</span></h1>
+      <p class="subtitle">$750 Reward Program</p>
+    </div>
+    
+    <div class="reward-card">
+      <div class="tag">Maximum Value</div>
+      <div class="amount">$750</div>
+    </div>
+    
+    <h3>Quick Start Guide</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div>
+          <b>Complete 4-6 deals</b>
+          <small>More deals, more rewards</small>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div>
+          <b>Enter a valid email</b>
+          <small>For confirmation and updates</small>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div>
+          <b>Must be 18 years or older</b>
+          <small>Required to participate</small>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq">
+      <h3>Common Questions</h3>
+      
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span>How long do the deals take?</span>
+          <div class="icon">+</div>
+        </div>
+        <div class="faq-a">
+          Most deals can be completed in just a few minutes. Larger offers may take longer depending on the steps involved.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <span>What kind of deals are included?</span>
+          <div class="icon">+</div>
+        </div>
+        <div class="faq-a">
+          Deals include free trials, app downloads, surveys, and signups from our partner network.
+        </div>
+      </div>
+    </div>
+
+    <a href="https://giftclick.org/aff_c?offer_id=317&aff_id=198846" class="cta-btn">Continue</a>
+
+  </div>
+
+<script>
+function toggleFAQ(element) {
+  const answer = element.nextElementSibling;
+  element.classList.toggle('active');
+  answer.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
