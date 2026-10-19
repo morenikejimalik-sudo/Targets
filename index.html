@@ -1,167 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Target $750 Reward</title>
-<style>
-    * {box-sizing:border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;}
-  body {margin:0; background:#FFF9F0; color:#1A1A1A; padding:16px;}
-  .container {max-width:420px; margin:auto;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spirit Halloween | Claim Reward</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-orange: #ff6b00;
+            --primary-hover: #e65c00;
+            --spooky-purple: #4a154b;
+            --bg-dark: #09090b;
+            --card-bg: #17171a;
+            --text-light: #f4f4f5;
+            --text-gray: #a1a1aa;
+            --border-color: #27272a;
+        }
 
-  .header {text-align:center; margin-bottom:18px;}
-  .logo {font-size:28px; font-weight:900; margin:0;}
-  .logo .target {color:#CC0000;}
-  .logo .bullseye {color:#CC0000; font-size:32px; vertical-align:middle; margin-left:2px;}
-  .subtitle {color:#5F6368; font-size:13px; margin-top:4px;}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-  .reward-card {
-    background:#CC0000;
-    color:#fff;
-    border-radius:16px;
-    padding:22px 16px;
-    text-align:center;
-    margin-bottom:18px;
-    box-shadow:0 8px 20px rgba(204,0,0,0.25);
-  }
-  .reward-card .tag {font-size:11px; text-transform:uppercase; letter-spacing:1px; opacity:0.8;}
-  .reward-card .amount {font-size:42px; font-weight:900; margin:6px 0;}
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% -20%, var(--spooky-purple) 0%, var(--bg-dark) 60%);
+            background-attachment: fixed;
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 16px 30px; /* Reduced padding */
+        }
 
-  h3 {font-size:15px; font-weight:800; margin:0 0 12px; color:#1A1A1A;}
+        .container {
+            width: 100%;
+            max-width: 480px; 
+        }
 
-  .steps {display:grid; gap:10px; margin-bottom:22px;}
-  .step {
-    background:#fff; 
-    border-radius:14px; 
-    padding:14px 14px 14px 50px;
-    position:relative;
-    box-shadow:0 2px 6px rgba(0,0,0,0.04);
-    border:1px solid #FFD9D9;
-  }
-  .step .num {
-    position:absolute;
-    left:14px; top:14px;
-    background:#CC0000; 
-    color:#fff;
-    border-radius:8px;
-    width:24px; height:24px;
-    line-height:24px; text-align:center;
-    font-size:12px; font-weight:900;
-  }
-  .step b {font-size:14px; display:block; margin-bottom:2px;}
-  .step small {color:#5F6368; font-size:12.5px;}
+        /* Top Logo Header */
+        .brand-header {
+            text-align: center;
+            margin-bottom: 15px; /* Reduced margin */
+        }
 
-  /* FAQ Accordion */
-  .faq {margin-bottom:22px;}
-  .faq-item {background:#fff; border-radius:12px; margin-bottom:8px; overflow:hidden; border:1px solid #FFD9D9;}
-  .faq-q {
-    padding:14px;
-    display:flex; justify-content:space-between; align-items:center;
-    cursor:pointer; font-weight:700; font-size:13.5px;
-  }
-  .faq-q .icon {
-    background:#CC0000; color:#fff; border-radius:50%;
-    width:20px; height:20px; line-height:20px; text-align:center;
-    font-size:12px; transition:transform 0.2s;
-  }
-  .faq-q.active .icon {transform:rotate(45deg);}
-  .faq-a {
-    padding:0 14px 14px;
-    font-size:12.5px; color:#5F6368; line-height:1.5;
-    display:none;
-  }
-  .faq-a.open {display:block;}
+        .brand-header h1 {
+            font-family: 'Creepster', cursive;
+            color: var(--primary-orange);
+            font-size: 2.2rem; /* Reduced size */
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+        }
 
-  /* CTA */
-  .cta-btn {
-    display:block;
-    width:100%;
-    background:#CC0000;
-    color:#fff;
-    text-align:center;
-    padding:16px;
-    border-radius:14px;
-    font-size:16px;
-    font-weight:900;
-    text-decoration:none;
-    box-shadow:0 6px 16px rgba(204,0,0,0.35);
-  }
-  .cta-btn:active {transform:translateY(1px);}
-</style>
+        /* --- Hero Banner / Ticket --- */
+        .hero-banner {
+            background: linear-gradient(180deg, #1f1f23 0%, #17171a 100%);
+            border: 2px dashed var(--primary-orange);
+            border-radius: 16px;
+            padding: 20px 15px; /* Reduced padding */
+            text-align: center;
+            position: relative;
+            margin-bottom: 20px; /* Reduced margin */
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.15), inset 0 0 20px rgba(255, 107, 0, 0.05);
+        }
+
+        .hero-banner::before, .hero-banner::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            background-color: var(--bg-dark);
+            border-radius: 50%;
+            border: 2px dashed var(--primary-orange);
+        }
+        .hero-banner::before { left: -11px; border-right-color: transparent; }
+        .hero-banner::after { right: -11px; border-left-color: transparent; }
+
+        .hero-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+            color: var(--primary-orange);
+            margin-bottom: 2px;
+        }
+
+        .hero-title {
+            font-family: 'Creepster', cursive;
+            font-size: 4rem; /* Reduced size */
+            line-height: 1;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 107, 0, 0.8), 0 0 40px rgba(255, 107, 0, 0.4);
+        }
+
+        /* --- Section Headers --- */
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* --- Quick Start Guide Cards --- */
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px; /* Reduced gap */
+            margin-bottom: 20px; /* Reduced margin */
+        }
+
+        .guide-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 12px 15px; /* Reduced padding */
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .guide-card:hover {
+            border-color: rgba(255, 107, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .step-icon {
+            background: rgba(255, 107, 0, 0.1);
+            color: var(--primary-orange);
+            font-size: 1.3rem;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            margin-right: 12px;
+            border: 1px solid rgba(255, 107, 0, 0.2);
+        }
+
+        .guide-content h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1px;
+        }
+
+        .guide-content p {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        /* --- FAQ Accordion --- */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.15);
+        }
+
+        .faq-header {
+            padding: 15px; /* Reduced padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-header h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding-right: 15px;
+        }
+
+        .faq-icon {
+            background-color: var(--primary-orange);
+            color: #000;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 15px;
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .faq-item.active .faq-content {
+            max-height: 200px;
+            padding: 0 15px 15px 15px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg); 
+            background-color: #fff;
+        }
+        
+        .faq-icon::before { content: '+'; margin-top: -2px; }
+        .faq-item.active .faq-icon::before { content: '+'; }
+
+        /* --- Continue Button --- */
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(180deg, var(--primary-orange) 0%, var(--primary-hover) 100%);
+            color: #000;
+            text-align: center;
+            padding: 16px; /* Reduced padding */
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 107, 0, 0.4);
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(255, 107, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(180deg, #ff802b 0%, var(--primary-orange) 100%);
+            transform: translateY(-2px);
+            animation: none;
+        }
+
+        .cta-button:active {
+            transform: translateY(1px);
+        }
+
+    </style>
 </head>
 <body>
-  <div class="container">
-    
-    <div class="header">
-      <h1 class="logo"><span class="target">Target</span><span class="bullseye">◎</span></h1>
-      <p class="subtitle">$750 Reward Program</p>
-    </div>
-    
-    <div class="reward-card">
-      <div class="tag">Maximum Value</div>
-      <div class="amount">$750</div>
-    </div>
-    
-    <h3>Quick Start Guide</h3>
-    <div class="steps">
-      <div class="step">
-        <div class="num">1</div>
-        <div>
-          <b>Complete 4-6 deals</b>
-          <small>More deals, more rewards</small>
-        </div>
-      </div>
-      <div class="step">
-        <div class="num">2</div>
-        <div>
-          <b>Enter a valid email</b>
-          <small>For confirmation and updates</small>
-        </div>
-      </div>
-      <div class="step">
-        <div class="num">3</div>
-        <div>
-          <b>Must be 18 years or older</b>
-          <small>Required to participate</small>
-        </div>
-      </div>
-    </div>
-    
-    <div class="faq">
-      <h3>Common Questions</h3>
-      
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">
-          <span>How long do the deals take?</span>
-          <div class="icon">+</div>
-        </div>
-        <div class="faq-a">
-          Most deals can be completed in just a few minutes. Larger offers may take longer depending on the steps involved.
-        </div>
-      </div>
 
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">
-          <span>What kind of deals are included?</span>
-          <div class="icon">+</div>
+    <div class="container">
+        
+        <!-- Brand Header -->
+        <div class="brand-header">
+            <h1>Spirit Halloween</h1>
         </div>
-        <div class="faq-a">
-          Deals include free trials, app downloads, surveys, and signups from our partner network.
+
+        <!-- Hero Banner / Ticket -->
+        <div class="hero-banner">
+            <div class="hero-subtitle">Maximum Value</div>
+            <div class="hero-title">$750</div>
         </div>
-      </div>
+
+        <!-- Quick Start Guide -->
+        <h2 class="section-title">🎃 Quick Start Guide</h2>
+        <div class="guide-list">
+            
+            <div class="guide-card">
+                <div class="step-icon">🕷️</div>
+                <div class="guide-content">
+                    <h3>Complete 4-6 deals</h3>
+                    <p>More deals, more rewards</p>
+                </div>
+            </div>
+            
+            <div class="guide-card">
+                <div class="step-icon">✉️</div>
+                <div class="guide-content">
+                    <h3>Enter a valid email</h3>
+                    <p>For confirmation and updates</p>
+                </div>
+            </div>
+            
+            <div class="guide-card">
+                <div class="step-icon">💀</div>
+                <div class="guide-content">
+                    <h3>Must be 18 years or older</h3>
+                    <p>Required to participate</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Common Questions (Accordion) -->
+        <h2 class="section-title">🦇 Common Questions</h2>
+        <div class="faq-list">
+            
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3>How long do the deals take?</h3>
+                    <div class="faq-icon"></div>
+                </div>
+                <div class="faq-content">
+                    <p>Most deals can be completed in just a few minutes. Larger offers may take longer depending on the steps involved.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header" onclick="toggleFaq(this)">
+                    <h3>What kind of deals are included?</h3>
+                    <div class="faq-icon"></div>
+                </div>
+                <div class="faq-content">
+                    <p>Deals include free trials, app downloads, surveys, and signups from our partner network.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA Button - Updated Link -->
+        <a href="https://giftclick.org/aff_c?offer_id=3280&aff_id=198846" class="cta-button" target="_blank" rel="noopener">Continue</a>
+
     </div>
 
-    <a href="https://giftclick.org/aff_c?offer_id=317&aff_id=198846" class="cta-btn">Continue</a>
+    <script>
+        // Accordion functionality
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            
+            // Close other open FAQs
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
 
-  </div>
-
-<script>
-function toggleFAQ(element) {
-  const answer = element.nextElementSibling;
-  element.classList.toggle('active');
-  answer.classList.toggle('open');
-}
-</script>
+            // Toggle the clicked one
+            faqItem.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
